@@ -13,3 +13,48 @@ key.properties
 **/*.jks
 
 android/app/google-services.json
+
+# Flutter/Dart/Pub related files
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+build/
+
+# IntelliJ related files
+.idea/
+*.iml
+
+# VS Code related files
+.vscode/
+
+# Miscellaneous
+*.class
+*.lock
+*.log
+*.tmp
+*.temp
+*.swp
+*.DS_Store
+*.ipr
+*.iws
+*.suo
+*.ncb
+*.obj
+*.pch
+*.pyc
+*.pyo
+*.dll
+*.exe
+*.so
+*.dylib
+*.pdb
+*.class
+*.war
+*.jar
+
+# Generated Files
+*.g.dart
+*.mocks.dart
