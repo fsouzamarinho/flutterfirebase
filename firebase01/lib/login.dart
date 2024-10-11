@@ -1,3 +1,4 @@
+import 'package:firebase01/Data/spUser.dart';
 import 'package:firebase01/userprofile.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -24,6 +25,18 @@ class _LoginScreenState extends State<LoginScreen> {
         email: _emailController.text,
         password: _passwordController.text,
       );
+
+
+      // Obter o UID do usuário autenticado
+    String uid = userCredential.user!.uid;
+
+    // Salvar o UID usando a função setUid do spUser
+    await SPUser.setUid(uid);
+
+    // Gravar o UID na coleção 'profissionais'
+    await _firestore.collection('profissionais').doc(uid).set({
+      'codigoprofissional': uid, // Exemplo de outro campo
+    });
 
       // Após o login, navega para a tela que exibe os dados do usuário
       Navigator.of(context).pushReplacement(
